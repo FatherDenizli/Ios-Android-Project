@@ -1,6 +1,5 @@
 package android;
 
-import appiumbaseclasses.AndroidbaseUrl;
 import appiumbaseclasses.generalStorebaseUrl;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -32,14 +31,14 @@ amounts selected for shopping
 
     }
     @Test
-    public void contentTest() throws InterruptedException {
+    public void PositiveTest() throws InterruptedException {
 
 
          //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
 
 //        MobileElement homeScreenTitle = storeDriver.findElementByXPath("//*[text()='General Store']");
         Thread.sleep(5000);
-        MobileElement countrySpinner = storeDriver.findElementByXPath("//android.widget.Spinner[@resource-id=\"com.androidsample.generalstore:id/spinnerCountry\"]");
+        MobileElement countrySpinner = storeDriver.findElementByXPath("//android.widget.Spinner[@resource-id='com.androidsample.generalstore:id/spinnerCountry']");
 
 //android.widget.TextView[@resource-id="android:id/text1"]
         MobileElement nameBox = storeDriver.findElementById("com.androidsample.generalstore:id/nameField");
@@ -47,17 +46,16 @@ amounts selected for shopping
         MobileElement femaleRadioButton = storeDriver.findElementById("com.androidsample.generalstore:id/radioFemale");
         MobileElement letsShopButton = storeDriver.findElementById("com.androidsample.generalstore:id/btnLetsShop");
 
-//ana sayfa da miyiz? onayladik
 
         //ulkeyi secmek icin ulke butununa bastik
         countrySpinner.click();
-        //ulkeyi sececegiz
+        //country selected
         Thread.sleep(4000);
         storeDriver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Ireland'))");
         MobileElement expectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Ireland']");
         expectedCountry.click();
         Thread.sleep(5000);
-        //istedigimiz ulkeyi dogru olarak sectik mi?
+
         MobileElement selectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Ireland']");
         System.out.println(selectedCountry.getText());
         Assert.assertEquals(selectedCountry.getText(), "Ireland");
@@ -70,8 +68,8 @@ amounts selected for shopping
         //click shop button
         letsShopButton.click();
 
-        //close app
-        storeDriver.closeApp();
+//        //close app
+//        storeDriver.closeApp();
 
     }
 }

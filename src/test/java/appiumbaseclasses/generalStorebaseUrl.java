@@ -21,13 +21,14 @@ public class generalStorebaseUrl {
 
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9.0");
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2 API 28");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 XL API 28");
 
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
 
 
         cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60000");
-        cap.setCapability(MobileCapabilityType.APP,"/Users/mustafababadagi/Ios-Android Applications/apkfiles/General-Store.apk");
+        cap.setCapability(MobileCapabilityType.
+                APP,"/Users/mustafababadagi/Ios-Android Applications/apkfiles/General-Store.apk");
 
 //        cap.setCapability("appPackage", "com.davemac327.gesture.tool");
 //        cap.setCapability("appActivity", "com.davemac327.gesture.tool.GestureBuilderActivity");
