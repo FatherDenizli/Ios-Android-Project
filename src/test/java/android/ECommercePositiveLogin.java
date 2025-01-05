@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class ECommercePositiveLogin02 extends generalStorebaseUrl {
+public class ECommercePositiveLogin extends generalStorebaseUrl {
     /*
     //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
     //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
@@ -47,7 +47,7 @@ amounts selected for shopping
         MobileElement letsShopButton = storeDriver.findElementById("com.androidsample.generalstore:id/btnLetsShop");
 
 
-        //ulkeyi secmek icin ulke butununa bastik
+        //click country spinner
         countrySpinner.click();
         //country selected
         Thread.sleep(4000);
@@ -61,7 +61,7 @@ amounts selected for shopping
         Assert.assertEquals(selectedCountry.getText(), "Ireland");
         Thread.sleep(3000);
 
-        //Assert.assertTrue(nameBox.getText().isEmpty()); for negative
+        //fill other boc and check
         nameBox.sendKeys("Blue");
         //male selected
         maleRadioButton.click();
@@ -69,7 +69,7 @@ amounts selected for shopping
         letsShopButton.click();
 
 //        //close app
-//        storeDriver.closeApp();
+        storeDriver.closeApp();
 
     }
 }

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class EcommerceNegativeLogin01 extends generalStorebaseUrl{
+public class EcommerceNegativeLogin extends generalStorebaseUrl{
 /*add*/
 
     @BeforeTest
@@ -78,12 +78,12 @@ public class EcommerceNegativeLogin01 extends generalStorebaseUrl{
 
         // Verify errror message
 
-//        MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast[@text='Please enter your name']");
-//        String errorText = errorPopUpText.getText();
-//        Assert.assertEquals(errorText, "Please enter your name");
+        MobileElement errorPopUpText = storeDriver.findElementByXPath("//android.widget.Toast[@text='Please enter your name']");
+        String errorText = errorPopUpText.getText();
+        Assert.assertEquals(errorText, "Please enter your name");
 
-        //close app
-//            storeDriver.closeApp();
+//        close app
+            storeDriver.closeApp();
 
 
 
