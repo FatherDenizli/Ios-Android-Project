@@ -1,0 +1,26 @@
+ To see HIDEN FILES
+
+marcs:~ ms$ defaults write com.apple.finder AppleShowAllFiles TRUE
+marcs:~ ms$ killall Finder
+marcs:~ ms$ defaults write com.apple.finder AppleShowAllFiles FALSE
+marcs:~ ms$ killall Finder
+
+HOW TO LEARN XCODE VERSION:
+    $ xcodebuild -version
+
+
+https://stackoverflow.com/questions/51183058/what-are-the-settings-for-appium-setup-on-mac ONEMLI
+
+Run the following command to list all .xcworkspace files in the directory:
+bash
+Copy code
+find . -name "*.xcworkspace" onemli
+
+List Available Devices and iOS Versions Onemli
+Run this command on terminal
+xcrun simctl list devices available
+
+xcrun simctl boot <device-udid>  to boot a new one
+
+
+
