@@ -21,7 +21,7 @@ public class generalStorebaseUrl {
 
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9.0");
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 XL API 28");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2 API 28");
 
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
 

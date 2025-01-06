@@ -1,6 +1,7 @@
 package android;
 
 import appiumbaseclasses.generalStorebaseUrl;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
@@ -10,18 +11,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 
 public class ECommercePositiveLogin extends generalStorebaseUrl {
-    /*
-    //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
-    //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
-//2-git  the items in the app by scrolling to specific Product and add to cart
-//3-Validate if the items selected in the page 2 are matching with the items displayed in check out page
-//4- Validate the total Amount displayed in the checkout page matches with sum of product
-amounts selected for shopping
-//5-Validate Mobile gestures working for link (long press) and navigate to WebView //6-Verify if user can do
- operations on Web view and navigate back to native app if needed.
-(go to google and search “appium” then navigate to NATIVE APP and verify it)
 
-     */
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
@@ -38,7 +28,8 @@ amounts selected for shopping
 
 //        MobileElement homeScreenTitle = storeDriver.findElementByXPath("//*[text()='General Store']");
         Thread.sleep(5000);
-        MobileElement countrySpinner = storeDriver.findElementByXPath("//android.widget.Spinner[@resource-id='com.androidsample.generalstore:id/spinnerCountry']");
+        MobileElement countrySpinner = storeDriver.
+                findElementByXPath("//android.widget.Spinner[@resource-id='com.androidsample.generalstore:id/spinnerCountry']");
 
 //android.widget.TextView[@resource-id="android:id/text1"]
         MobileElement nameBox = storeDriver.findElementById("com.androidsample.generalstore:id/nameField");
@@ -50,15 +41,24 @@ amounts selected for shopping
         //click country spinner
         countrySpinner.click();
         //country selected
-        Thread.sleep(4000);
-        storeDriver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Ireland'))");
-        MobileElement expectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Ireland']");
-        expectedCountry.click();
-        Thread.sleep(5000);
 
-        MobileElement selectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Ireland']");
+
+        Thread.sleep(3000);
+
+        String country = "Japan";
+        MobileElement element = (MobileElement) storeDriver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().text('" + country + "'))"));
+
+        element.click();
+
+//        MobileElement expectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Japan']");
+//        expectedCountry.click();
+//        Thread.sleep(5000);
+
+        MobileElement selectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Japan']");
         System.out.println(selectedCountry.getText());
-        Assert.assertEquals(selectedCountry.getText(), "Ireland");
+        Assert.assertEquals(selectedCountry.getText(), "Japan");
         Thread.sleep(3000);
 
         //fill other boc and check
