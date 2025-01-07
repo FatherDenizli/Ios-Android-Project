@@ -46,10 +46,7 @@ public class EcommerceShopping03 extends GeneralStorebaseUrl {
 
         MobileElement expectedCountry = storeDriver.findElementByXPath("//android.widget.TextView[@text='Brazil']");
         Assert.assertEquals(expectedCountry.getText(),"Brazil");
-        Thread.sleep(3000);
-        expectedCountry.click();
-
-
+        TimeUnit.SECONDS.sleep(3);        expectedCountry.click();
 
         nameBox.sendKeys("Mavi");
 
@@ -68,31 +65,14 @@ public class EcommerceShopping03 extends GeneralStorebaseUrl {
         addToCart2.click();
 
 
-
-
-
-
-
-
-
-//         storeDriver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('LeBron Soldier 12'))");
-        TimeUnit.SECONDS.sleep(3);
-//        MobileElement addToCart2 = storeDriver.findElementByXPath("(//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productAddCart\"])[1]");
-//        addToCart2.click();
-//         storeDriver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
-//          Assert.assertTrue(storeDriver.findElementById("com.androidsample.generalstore:id/toolbar_title").isDisplayed());
-//         //   First product name Air Jordan 4 Retro
-//        Assert.assertEquals(storeDriver.findElementByXPath("//android.widget.TextView[@text='Nike Blazer Mid '77']").getText(),"Nike Blazer Mid '77");
-
-        //   Second product name Converse All Star
-        storeDriver.findElementByXPath("//android.widget.ImageButton[@resource-id=\"com.androidsample.generalstore:id/appbar_btn_cart\"]").click();
-        //android.widget.TextView[@resource-id="com.androidsample.generalstore:id/productName"]
-        Assert.assertEquals(storeDriver.findElementByXPath("//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productName\" and @text=\"Jordan Lift Off\"]").getText(),"Jordan Lift Off");
-        Assert.assertEquals(storeDriver.findElementByXPath("//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productName\" and @text=\"PG 3\"]").getText(),"PG 3");
+         storeDriver.findElementByXPath("//android.widget.ImageButton[@resource-id=\"com.androidsample.generalstore:id/appbar_btn_cart\"]").click();
+         //************Assertion************
+         Assert.assertEquals(storeDriver.findElementByXPath("//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productName\" and @text=\"Jordan Lift Off\"]").getText(),"Jordan Lift Off");
+         Assert.assertEquals(storeDriver.findElementByXPath("//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productName\" and @text=\"PG 3\"]").getText(),"PG 3");
 
         Thread.sleep(5000);
         //Close app
-//        storeDriver.closeApp();
+        storeDriver.closeApp();
 
 
 
