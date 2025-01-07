@@ -1,6 +1,6 @@
 package android;
 
-import appiumbaseclasses.generalStorebaseUrl;
+import appiumbaseclasses.GeneralStorebaseUrl;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class ECommercePositiveLogin extends generalStorebaseUrl {
+public class ECommercePositiveLogin extends GeneralStorebaseUrl {
 
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
 
 
-        AndroidDriver<MobileElement> storeDriver= generalStorebaseUrl.getAndroidDriver();
+        AndroidDriver<MobileElement> storeDriver= GeneralStorebaseUrl.getAndroidDriver();
 
     }
     @Test

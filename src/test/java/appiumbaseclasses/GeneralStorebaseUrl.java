@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class generalStorebaseUrl {
+public class GeneralStorebaseUrl {
 
     public static AndroidDriver<MobileElement> storeDriver ;
 
@@ -21,7 +21,7 @@ public class generalStorebaseUrl {
 
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9.0");
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2 API 28");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2 XL API 28");
 
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
 
